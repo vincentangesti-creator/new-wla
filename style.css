@@ -65,7 +65,7 @@ header {
 }
 
 .hero-image {
-    background-image: <img src="asset/kiki.png">
+    background-image: url("./images/kiki.png");
     background-size: cover;
     background-position: center;
     height: 100vh;
