@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kiki's Delivery Service</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="side-menu" id="sideMenu">
+
+<a href="#">
+<span class="material-icons">home</span>
+Home
+</a>
+
+<a href="#">
+<span class="material-icons">priority_high</span>
+Update
+</a>
+
+<a href="#">
+<span class="material-icons">schedule</span>
+Schedule
+</a>
+
+<a href="#">
+<span class="material-icons">category</span>
+Genre
+</a>
+
+<a href="#">
+<span class="material-icons">edit</span>
+Suggestion
+</a>
+
+<a href="#">
+<span class="material-icons">logout</span>
+Log out
+</a>
+
+</div>
+
+
+<header>
+
+<div class="header-left">
+
+<!-- MENU BUTTON -->
+<span class="material-icons menu-icon" onclick="toggleMenu()">menu</span>
+
+<img src="your-logo.png" class="logo">
+
+</div>
+
+
+<div class="search-bar">
+
+<span class="material-icons search-icon">search</span>
+
+<input type="text" placeholder="Search Here">
+
+</div>
+
+<button class="info-btn" onclick="openInfo()">
+    <span class="material-icons">info</span>
+</button>
+<button class="login-btn" onclick="openLogin()">Log In</button>
+
+
+</header>
+
+
+
+<main>
+
+<div class="hero-image">
+
+<div class="overlay">
+
+<div class="text-content">
+
+<h1>KIKI'S DELIVERY SERVICE</h1>
+
+
+<div class="metadata">
+
+<button class="details-btn">
+
+<span class="material-icons">play_arrow</span>
+
+Details
+
+</button>
+
+<span class="duration">Dur: 108 min</span>
+
+</div>
+
+
+<p class="synopsis">
+
+Thirteen-year-old Kiki tries to become an independent witch and gets a job at a delivery service.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</main>
+<script>
+const menu = document.getElementById("sideMenu");
+
+function toggleMenu(){
+    menu.classList.toggle("active");
+}
+
+/* CLOSE WHEN CLICKING OUTSIDE tutupss */
+document.addEventListener("click", function(event){
+
+    const clickedInsideMenu = menu.contains(event.target);
+
+    const clickedMenuButton = event.target.classList.contains("menu-icon");
+
+    if(!clickedInsideMenu && !clickedMenuButton){
+        menu.classList.remove("active");
+    }
+
+});
+</script>
+<!-- LOGIN POPUP -->
+<div class="login-popup" id="loginPopup">
+
+    <div class="login-box">
+
+        <h2>Log in</h2>
+
+        <label>Email:</label>
+        <input type="text" placeholder="Email">
+
+        <label>Username:</label>
+        <input type="text" placeholder="Username">
+
+        <label>Password:</label>
+        <input type="password" placeholder="Password">
+
+        <button class="sign-btn">SIGN</button>
+
+    </div>
+
+</div>
+<script>
+const popup = document.getElementById("loginPopup");
+
+function openLogin(){
+    popup.style.display = "flex";
+}
+
+/* close when clicking outside */
+popup.addEventListener("click", function(e){
+    if(e.target === popup){
+        popup.style.display = "none";
+    }
+});
+</script>
+<!-- ABOUT POPUP -->
+<div class="info-popup" id="infoPopup">
+
+    <div class="info-box">
+
+        <h2>About Us</h2>
+
+        <p>
+        Welcome to our anime recommendation platform — a space created by true anime lovers, for anime lovers. 
+        We are a passionate team dedicated to helping fans discover the best anime according to their tastes, 
+        whether you're a long-time otaku or just starting your journey.
+        <br><br>
+        Our recommendations are built on accuracy, deep knowledge, and genuine appreciation for the art of anime. 
+        We carefully pick titles based on story quality, animation, and community feedback, ensuring that every suggestion we provide is meaningful and worth your time.
+        </p>
+
+    </div>
+
+</div>
+<script>
+const infoPopup = document.getElementById("infoPopup");
+
+function openInfo(){
+    infoPopup.style.display = "flex";
+}
+
+/* close when clicking outside */
+infoPopup.addEventListener("click", function(e){
+    if(e.target === infoPopup){
+        infoPopup.style.display = "none";
+    }
+});
+</script>
+</body>
+</html>
